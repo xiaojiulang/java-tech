@@ -250,10 +250,15 @@ public class DateUtil {
     /**
      * + 小时
      * @param begin
+     *          开始时间
      * @param end
+     *          结束时间
      * @param format
+     *          时间格式（输入、输出时间）
      * @return
+     *          指定格式的时间字符串集合
      * @throws ParseException
+     *          时间解析异常
      */
     public static List<String> getDateRangeHourList(String begin, String end, String format) throws ParseException {
         return getDateRangeList(begin, end, format, format, format, 60*60);
