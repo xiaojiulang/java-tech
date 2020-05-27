@@ -168,8 +168,13 @@ public class DateUtil {
     /**
      * 获取时间范围列表
      * @param begin
+     *          开始时间
      * @param end
+     *          结束时间
      * @return
+     *          指定格式的时间字符串集合
+     * @throws ParseException
+     *          时间解析异常
      */
     public static List<String> getDateRangeList(String begin, String end, String formatBegin, String formatEnd, String formatPrint, int addSecond) throws ParseException {
         return getDateRangeList(
@@ -222,10 +227,15 @@ public class DateUtil {
     /**
      * 加 day
      * @param begin
+     *          开始时间
      * @param end
+     *          结束时间
      * @param format
+     *          时间格式（输入、输出时间）
      * @return
+     *          指定格式的时间字符串集合
      * @throws ParseException
+     *          时间解析异常
      */
     public static List<String> getDateRangeDayList(String begin, String end, String format) throws ParseException {
         return getDateRangeList(begin, end, format, format, format, 60*60*24);
@@ -267,6 +277,7 @@ public class DateUtil {
     /**
      * 判断是否在指定时间范围内
      * @return
+     *          是否在指定时间范围内
      */
     public static boolean isBetween(String begin, String end, String val, String format, boolean leftClose, boolean rightClose) throws Exception {
         SimpleDateFormat sdf = getFormat(format);
@@ -298,7 +309,9 @@ public class DateUtil {
     /**
      * 排序时间
      * @param dates
+ *              输入的date类型集合
      * @return
+     *          排序后的集合
      */
     public static List<Date> sortDates(List<Date> dates, boolean asc) {
         for (int i=1; i<dates.size(); i++) {
